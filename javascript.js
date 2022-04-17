@@ -9,6 +9,7 @@ function computerPlay() {
 	}
 }
 
+// Inputs player and computer selection values and returns result
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
 		let result = "It's a draw! " + playerSelection + " and " + computerSelection;
@@ -32,11 +33,34 @@ function playRound(playerSelection, computerSelection) {
 		let result = "You lose! " + computerSelection + " beats " + playerSelection;
 		return result;
 	} else {
-		let result = "Incorrect selection!"
+		let result = "Incorrect selection! Try again."
 		return result;
 	}
 }
 
+// Main game function to play 5 rounds, show round and calculate score
+function game() {
+	let yourScore = 0;
+	let computerScore = 0;
+	for (let i = 0; i < 5; i++) {
+		result = playRound(prompt("Make your selection (Rock, Paper, Scissors): "), computerPlay());
+		if (result.includes("win")) {
+			console.log(result);
+			console.log("Round: " + (i + 1) + " of 5. Score: " + (yourScore + 1) + " - " + computerScore);
+			yourScore = yourScore + 1;
+		} else if (result.includes("lose")) {
+			console.log(result);
+			console.log("Round: " + (i + 1) + " of 5. Score: " + yourScore + " - " + (computerScore + 1));
+			computerScore = computerScore + 1;
+		} else if (result.includes("draw")) {
+			console.log(result);
+			console.log("Round: " + (i + 1) + " of 5. Score: " + yourScore + " - " + computerScore);
+		} else {
+			console.log(result);
+			console.log("Round: " + (i + 1) + " of 5. Score: " + yourScore + " - " + computerScore);
+			i = i - 1;
+		}
+	}
+}
 
-
-console.log(playRound(prompt("Make your selection (Rock, Paper, Scissors): "), computerPlay()));
+game()
