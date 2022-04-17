@@ -13,7 +13,7 @@ function computerPlay() {
 // Inputs player and computer selection values and returns result
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-		let result = "It's a draw! " + capitalizeFirstLetter(playerSelection) + " and " + computerSelection;
+		let result = "It's a tie! " + capitalizeFirstLetter(playerSelection) + " vs " + computerSelection;
 		return result;
 	} else if ((playerSelection.toLowerCase() == "rock") && (computerSelection.toLowerCase() == "scissors")) {
 		let result = "You win! " + capitalizeFirstLetter(playerSelection) + " beats " + computerSelection;
@@ -61,12 +61,10 @@ function game() {
 			console.log(result);
 			console.log("Score: " + yourScore + " - " + (computerScore + 1));
 			computerScore = computerScore + 1;
-		} else if (result.includes("draw")) {
+		} else if (result.includes("tie")) {
 			console.log("Round: " + (i + 1) + " of 5");
 			console.log(result);
-			console.log("Score: " + (yourScore + 1) + " - " + (computerScore + 1));
-			yourScore = yourScore + 1;
-			computerScore = computerScore + 1;
+			console.log("Score: " + (yourScore) + " - " + (computerScore));
 		} else {
 			console.log("Round: " + (i + 1) + " of 5");
 			console.log(result);
@@ -83,7 +81,7 @@ function game() {
 		console.log("You lose...");
 		console.log("*************************");
 	} else {
-		console.log("It's a draw.");
+		console.log("It's a tie.");
 		console.log("*************************");
 	}
 }
