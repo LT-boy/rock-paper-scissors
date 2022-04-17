@@ -74,8 +74,20 @@ function game() {
 			i = i - 1;
 		}
 	}
+	console.log("*************************");
+	console.log("Final score: " + yourScore + " - " + computerScore);
+	if (yourScore > computerScore) {
+		console.log("You win the game!!!");
+		console.log("*************************");
+	} else if (yourScore < computerScore) {
+		console.log("You lose...");
+		console.log("*************************");
+	} else {
+		console.log("It's a draw.");
+		console.log("*************************");
+	}
 }
 
 
 // Run game
-game()
+game();
