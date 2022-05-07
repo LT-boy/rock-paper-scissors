@@ -3,6 +3,7 @@
 	justify-content: center;
 	gap: 50px;
 	margin-top: 70px;
+	margin-bottom: 70px;
 }
 
 button {
@@ -18,4 +19,16 @@ button {
 	font-size: 40px;
 	margin-top: 50px;
 	font-weight: bold;
+}
+
+#result-text {
+	text-align: center;
+	font-size: 30px;
+	font-style: italic;
+}
+
+#final-result {
+	text-align: center;
+	font-size: 30px;
+	border-style: dashed;
 }
