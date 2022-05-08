@@ -27,8 +27,30 @@ button {
 	font-style: italic;
 }
 
+.container-final-result {
+	display: flex;
+	justify-content: center;
+}
+
 #final-result {
 	text-align: center;
 	font-size: 30px;
-	border-style: dashed;
+	width: 500px;
+	padding: 10px 30px;
+}
+
+/*Added with JS*/
+.win-result {
+	color: white;
+	background-color: green;
+	font-weight: bold;
+	border-style: dotted;
+}
+
+/*Added with JS*/
+.lose-result {
+	color: white;
+	background-color: red;
+	font-weight: bold;
+	border-style: dotted;
 }

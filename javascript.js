@@ -61,12 +61,10 @@ document.getElementById("rock-btn").addEventListener("click", function() {
 		document.getElementById("result-text").innerHTML = playRound("rock", computerPlay());
 		addScore(playerScore, computerScore);
 		if(playerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Congratulations! You WIN the game!";
-			document.getElementById("result-text").innerHTML = "";
+			addWinnerText()
 		}
 		else if(computerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Sorry, you LOST the game.. Maybe next time.";
-			document.getElementById("result-text").innerHTML = "";
+			addLoserText()
 		}
 		else {
 		}
@@ -75,12 +73,10 @@ document.getElementById("paper-btn").addEventListener("click", function() {
 		document.getElementById("result-text").innerHTML = playRound("paper", computerPlay());
 		addScore(playerScore, computerScore);
 		if(playerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Congratulations! You WIN the game!";
-			document.getElementById("result-text").innerHTML = "";
+			addWinnerText()
 		}
 		else if(computerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Sorry, you LOST the game.. Maybe next time.";
-			document.getElementById("result-text").innerHTML = "";
+			addLoserText()
 		}
 		else {
 		}
@@ -89,12 +85,10 @@ document.getElementById("scissors-btn").addEventListener("click", function() {
 		document.getElementById("result-text").innerHTML = playRound("scissors", computerPlay());
 		addScore(playerScore, computerScore);
 		if(playerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Congratulations! You WIN the game!";
-			document.getElementById("result-text").innerHTML = "";
+			addWinnerText()
 		}
 		else if(computerScore >= 5) {
-			document.getElementById("final-result").innerHTML = "Sorry, you LOST the game.. Maybe next time.";
-			document.getElementById("result-text").innerHTML = "";
+			addLoserText()
 		}
 		else {
 		}
@@ -105,6 +99,18 @@ function addScore(playerScore, computerScore) {
 	if(playerScore <= 5 && computerScore <= 5) {
 		document.getElementById("score").innerHTML = "Player" + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp" + playerScore + " : " + computerScore + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp" + "Computer";
 	}
+}
+
+function addWinnerText() {
+	document.getElementById("final-result").innerHTML = "Congratulations! You WON the game!";
+	document.getElementById("final-result").classList.add('win-result');
+	document.getElementById("result-text").innerHTML = "";
+}
+
+function addLoserText() {
+	document.getElementById("final-result").innerHTML = "Sorry, you LOST the game...";
+	document.getElementById("final-result").classList.add('lose-result');
+	document.getElementById("result-text").innerHTML = "";
 }
 
 
